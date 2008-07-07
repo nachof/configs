@@ -34,10 +34,18 @@ filetype indent on
 
 runtime! macros/matchit.vim
 
-augroup myfiletypes
-  autocmd FileType ruby,eruby,yaml,html set sw=2
-  autocmd FileType php set sw=8
+augroup filetypedefinitions
+  autocmd BufRead,BufNewFile *.txt setfiletype text
 augroup END
+
+augroup textfiles
+  autocmd FileType text nmap j gj
+  autocmd FileType text nmap k gk
+  autocmd FileType text set linebreak
+augroup END
+
+autocmd FileType ruby,eruby,yaml,html set sw=2
+autocmd FileType php set sw=8
 
 set t_Co=16
 
