@@ -39,6 +39,7 @@ augroup END
 autocmd FileType ruby,eruby,yaml,html set sw=2
 autocmd FileType php set sw=8
 autocmd FileType haml set syntax=haml
+autocmd FileType haml set ai
 
 
 " Set color scheme for console
