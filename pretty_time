@@ -1,0 +1,58 @@
+#!/usr/bin/ruby
+
+$periods = {
+  (0..2) => "",
+  (3..7) => "y cinco",
+  (8..12) => "y diez",
+  (13..17) => "y cuarto",
+  (18..22) => "y veinte",
+  (23..27) => "y veinticinco",
+  (28..32) => "y media",
+  (33..37) => "menos veinticinco",
+  (38..42) => "menos veinte",
+  (43..47) => "menos cuarto",
+  (48..52) => "menos diez",
+  (53..57) => "menos cinco",
+  (58..59) => ""
+}
+
+$hour_modifiers = {
+  (0..32) => 0,
+  (33..59) => 1
+}
+
+$hour_names = {
+   0 => 'Las doce',
+   1 => 'La una',
+   2 => 'Las dos',
+   3 => 'Las tres',
+   4 => 'Las cuatro',
+   5 => 'Las cinco',
+   6 => 'Las seis',
+   7 => 'Las siete',
+   8 => 'Las ocho',
+   9 => 'Las nueve',
+  10 => 'Las diez',
+  11 => 'Las once',
+  12 => 'Las doce'
+}
+
+def hour_name(h)
+  $hour_names[h.to_i]
+end
+
+def hour_mod(m)
+  $hour_modifiers.each do |key,val|
+    return val if key.include? m.to_i
+  end
+end
+
+def period(m)
+  $periods.each do |key,val|
+    return val if key.include? m.to_i
+  end
+end
+
+time = Time.now
+hour = (time.hour + hour_mod(time.min)) % 12
+print "#{hour_name(hour)} #{period(time.min)}".chomp
