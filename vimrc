@@ -27,6 +27,7 @@ filetype indent on
 augroup filetypedefinitions
   autocmd BufRead,BufNewFile *.txt setfiletype text
   autocmd BufRead,BufNewFile *.haml setfiletype haml
+  autocmd BufRead,BufNewFile *.sass setfiletype sass
 augroup END
 
 augroup textfiles
@@ -40,6 +41,7 @@ autocmd FileType ruby,eruby,yaml,html set sw=2
 autocmd FileType php set sw=8
 autocmd FileType haml set syntax=haml
 autocmd FileType haml set ai
+autocmd FileType sass set ai
 
 
 " Set color scheme for console
