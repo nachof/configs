@@ -65,3 +65,16 @@ endfunction
 
 inoremap <tab> <c-r>=InsertTabWrapper ("forward")<cr>
 inoremap <s-tab> <c-r>=InsertTabWrapper ("backward")<cr>
+
+" File finder
+function! EnterGoToFileWrapper()
+  if exists("b:isFileList") && b:isFileList
+    return "\<Esc>:edit! <cfile>\<cr>"
+  else
+    return "\<Esc>\<Enter>"
+  endif
+endfunction
+
+nnoremap <enter> i<c-r>=EnterGoToFileWrapper()<cr>
+
+map <C-F> <ESC>:split<CR>:new<CR>:let b:isFileList=1<CR>:read ! find \| grep 
