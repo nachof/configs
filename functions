@@ -1,0 +1,50 @@
+__git_repo_name() {
+  cdup=$(git rev-parse --show-cdup 2> /dev/null)
+  if [ $? == 0 ]; then
+    if [ -z "$cdup" ]; then
+      cdup=.
+    fi
+    dir=$(cd $cdup; pwd)
+    echo -n "("
+    name=$(git config --get remote.origin.url | sed -e 's/^.*[:\\/]\([^:.\\/]*\)\.git$/\1/')
+    if [ -n "$name" ]; then
+      echo -n $name
+    else
+      echo -n $(basename $dir)
+    fi
+    echo ":"
+  fi
+}
+
+cdg() {
+  cdup=$(git rev-parse --show-cdup 2> /dev/null)
+  r=$?
+  if [ $r == 0 ]; then
+    if [ -z "$cdup" ]; then
+      cdup=.
+    fi
+    cd $cdup/$1
+  else
+    echo "Not in a git repository"
+    return $r
+  fi
+}
+
+domainavailable() {
+  if whois $1 | grep "No match for" &> /dev/null; then
+    echo "$1 is available"
+    return 0
+  else
+    echo "$1 is not available"
+    return 1
+  fi
+}
+
+finddomain() {
+  for f in $@; do
+    domainavailable $f &> /dev/null && echo $f
+  done
+}
+
+
+# vim:set syntax=sh:set ai:
