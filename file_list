@@ -4,3 +4,4 @@ vimrc ~/.vimrc
 bin/s ~/bin/s
 bin/screen_functions.sh ~/bin/screen_functions.sh
 bin/op ~/bin/op
+bin/cgoban3 ~/bin/cgoban3
