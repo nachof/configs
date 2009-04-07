@@ -1,0 +1,27 @@
+#!/bin/bash
+. screen_functions.sh
+
+dialog=$(dialog)
+
+sessions=$(screen_available_sessions)
+sessionstwice=$(for w in $sessions; do
+  echo $w $w
+done)
+
+$dialog --clear --title "Select session" \
+        --menu "Please select a session to restore" \
+        20 51 14 "<<new>>" "Create a new session" \
+        $sessionstwice 2> /tmp/sessionselected
+
+
+selected=$(tail -1 /tmp/sessionselected)
+
+if [[ "$selected" == "<<new>>" ]]; then
+  $dialog --inputbox "What is the name of the new session?" 8 51 2> /tmp/sessionselected
+  name=$(cat /tmp/sessionselected | tail -1)
+  echo -e "\033]2;$name\007"
+  screen_open -S $name
+else
+  [[ -n "$selected" ]] && screen_open -x $selected
+fi
+

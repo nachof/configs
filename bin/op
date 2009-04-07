@@ -1,0 +1,11 @@
+#!/bin/bash
+# OP OpenProject
+
+. screen_functions.sh
+
+basedir=~/proyectos
+dir=$basedir/$1
+name=$(basename $dir)
+
+cd $dir
+screen_load_or_create $name
