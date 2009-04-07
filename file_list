@@ -1,0 +1,6 @@
+functions ~/.functions
+bin/pretty_time ~/bin/pretty_time
+vimrc ~/.vimrc
+bin/s ~/bin/s
+bin/screen_functions.sh ~/bin/screen_functions.sh
+bin/op ~/bin/op
