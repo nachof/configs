@@ -29,7 +29,11 @@ screen_load_or_create() {
   if screen_available_sessions | grep -q "^$1$"; then
     screen_open -x $1
   else
-    screen_open -S $1
+    screen_open -S $1 &
+    if [[ -e ".screensession" ]]; then
+      sleep 0.5
+      screen -S $1 -X source .screensession
+    fi
   fi
 }
 

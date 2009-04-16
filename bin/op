@@ -8,4 +8,4 @@ dir=$basedir/$1
 name=$(basename $dir)
 
 cd $dir
-screen_load_or_create $name
+screen_load_or_create $name &
