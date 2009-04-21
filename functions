@@ -46,5 +46,19 @@ finddomain() {
   done
 }
 
+# Autocomplete for op command
+_op_complete() {
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  prev="${COMP_WORDS[COMP_CWORD-1]}"
+  basedir=$HOME/proyectos
+  opts=$(cd $basedir; find -maxdepth 2 -type d | cut -b 3-)
+
+  COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+  return 0
+}
+
+complete -F _op_complete op
+
 
 # vim:set syntax=sh:set ai:
