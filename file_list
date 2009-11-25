@@ -7,6 +7,7 @@ bin/op ~/bin/op
 bin/cgoban3 ~/bin/cgoban3
 bin/ssh ~/bin/ssh
 bin/batt.sh ~/bin/batt.sh
+bin/show_time.sh ~/bin/show_time.sh
 xdefaults ~/.Xdefaults
 xbindkeysrc ~/.xbindkeysrc
 bashrc ~/.bashrc
