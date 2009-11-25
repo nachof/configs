@@ -38,16 +38,20 @@ augroup textfiles
 augroup END
 
 autocmd FileType ruby,eruby,yaml,html set sw=2
-autocmd FileType php set sw=8
+autocmd FileType php set sw=2
 autocmd FileType haml set syntax=haml
 autocmd FileType haml set ai
 autocmd FileType sass set ai
+
+" show tabs as blank-padded arrows, trailing spaces as middle-dots
+set list
+set listchars=tab:→\ ,trail:·
 
 
 " Set color scheme for console
 set t_Co=16
 if !has("gui_running")
-  colorscheme nacho
+  colorscheme desert
   highlight Normal ctermbg=Black
 endif
 
@@ -78,3 +82,15 @@ endfunction
 nnoremap <enter> i<c-r>=EnterGoToFileWrapper()<cr>
 
 map <C-F> <ESC>:split<CR>:new<CR>:let b:isFileList=1<CR>:read ! find \| grep 
+
+" Language mappings for Russian (from ':help russian-keymap')
+"set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+
+
+
+
+"highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+"match OverLength /\%81v.*/
+
+
+syn on
