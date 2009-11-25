@@ -7,4 +7,5 @@ bin/op ~/bin/op
 bin/cgoban3 ~/bin/cgoban3
 bin/ssh ~/bin/ssh
 xdefaults ~/.Xdefaults
+xbindkeysrc ~/.xbindkeysrc
 bashrc ~/.bashrc
