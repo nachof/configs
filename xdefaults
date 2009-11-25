@@ -1,0 +1,70 @@
+################# URXVT #################
+
+# Tamaño
+urxvt*geometry: 90x35
+
+# Transparencia
+urxvt*transparent: true
+urxvt*shading: 15
+
+# Scroll
+urxvt*scrollBar: true
+urxvt*scrollstyle: plain
+urxvt*saveLines: 4096
+
+# Que no imprima al menor teclazo (pero al menos que me guarde el coso)
+URxvt.print-pipe: cat > $(TMPDIR=/tmp/ mktemp urxvt.XXXXXX)
+
+# Comportamiento con bell
+URxvt.urgentOnBell: true
+URxvt.mapAlert: true
+
+#Colores
+URxvt.depth: 24
+urxvt*reverseVideo: true
+
+# Black
+URxvt.color0:   #000000
+URxvt.color8:   #000054
+# Red
+URxvt.color1:   #FF2222
+URxvt.color9:   #FF0054
+# Green
+#URxvt.color2:   #00A800
+#URxvt.color10:  #00FF54
+# Yellow
+#URxvt.color3:   #A8A800
+#URxvt.color11:  #FFFF54
+# Blue
+#URxvt.color4:   #8888EE
+URxvt.color4:   #40B0DD
+URxvt.color12:  #5090FF
+# Magenta
+#URxvt.color5:   #A800A8
+#URxvt.color13:  #FF00FF
+# Cyan
+URxvt.color6:   #33A899
+URxvt.color14:  #44FFFF
+# White
+URxvt.color7:   #E4E4E4
+URxvt.color15:  #FFFFFF
+
+#########################################
+
+# Fuente
+#urxvt*font:                    -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-1
+#urxvt*boldFont:                -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-1
+
+#urxvt.font:             -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
+#urxvt.boldFont:             -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1
+#urxvt.boldFont:         -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-15
+#urxvt.font:         -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso8859-15
+
+#urxvt.font: -*-courier-medium-r-*-*-12-*-*-*-*-*-*-*
+#urxvt.boldFont: -*-courier-medium-r-*-*-12-*-*-*-*-*-*-*
+
+#urxvt.font: -*-terminal-medium-*-*-*-14-*-*-*-*-*-*-*
+#urxvt.boldFont: -*-terminal-medium-*-*-*-14-*-*-*-*-*-*-*
+
+#urxvt.font: -xos4-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
+#urxvt.boldFont: -xos4-terminus-medium-r-*-*-14-*-*-*-*-*-*-*
