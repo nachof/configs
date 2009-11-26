@@ -11,3 +11,4 @@ bin/show_time.sh ~/bin/show_time.sh
 xdefaults ~/.Xdefaults
 xbindkeysrc ~/.xbindkeysrc
 bashrc ~/.bashrc
+screenrc ~/.screenrc
