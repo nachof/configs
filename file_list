@@ -12,3 +12,4 @@ xdefaults ~/.Xdefaults
 xbindkeysrc ~/.xbindkeysrc
 bashrc ~/.bashrc
 screenrc ~/.screenrc
+inputrc ~/.inputrc
