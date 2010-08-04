@@ -24,7 +24,7 @@ export EDITOR=vim
 # rvm-install added line:
 if [[ -s /home/nacho/.rvm/scripts/rvm ]] ; then
   source /home/nacho/.rvm/scripts/rvm ;
-  rvm use 1.8.7 &> /dev/null
+  rvm use ree &> /dev/null
 fi
 
 
