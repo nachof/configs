@@ -158,8 +158,7 @@ shelltitle "$ |bash"
 
 # Status bar
 hardstatus alwayslastline
-backtick 1 60 60 pretty_time
-hardstatus string '%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %1` %{g}]'
+hardstatus string '%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%= %{g}]'
 
 # 256 colores?
 #attrcolor b ".I"
