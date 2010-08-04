@@ -1,2 +1,2 @@
 #!/bin/bash
-/usr/bin/javaws http://files.gokgs.com/javaBin/cgoban.jnlp
+javaws http://files.gokgs.com/javaBin/cgoban.jnlp
