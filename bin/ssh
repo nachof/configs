@@ -6,4 +6,4 @@ if [[ $(ssh-add -L | cut -d\  -f1) != "ssh-rsa" ]]; then
     ssh-add
 fi
 
-$real_ssh $@
+$real_ssh "$@"
