@@ -3,9 +3,13 @@
 # Tamaño
 urxvt*geometry: 90x35
 
-# Transparencia
+# (pseudo)Transparencia
 urxvt*transparent: true
-urxvt*shading: 15
+urxvt*shading: 5
+
+# Lo de abajo es para transparencia real
+##URxvt.depth: 32
+##URxvt.background: rgba:0000/0000/0000/dddd
 
 # Scroll
 urxvt*scrollBar: true
@@ -37,14 +41,14 @@ URxvt.color9:   #FF0054
 #URxvt.color11:  #FFFF54
 # Blue
 #URxvt.color4:   #8888EE
-URxvt.color4:   #40B0DD
-URxvt.color12:  #5090FF
+#URxvt.color4:   #40B0DD
+#URxvt.color12:  #5090FF
 # Magenta
 #URxvt.color5:   #A800A8
 #URxvt.color13:  #FF00FF
 # Cyan
-URxvt.color6:   #33A899
-URxvt.color14:  #44FFFF
+#URxvt.color6:   #33A899
+#URxvt.color14:  #44FFFF
 # White
 URxvt.color7:   #E4E4E4
 URxvt.color15:  #FFFFFF
@@ -52,7 +56,7 @@ URxvt.color15:  #FFFFFF
 #########################################
 
 # Fuente
-#urxvt*font:                    -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-1
+urxvt*font:                    -*-terminus-medium-*-*-*-14-*-*-*-*-*-iso8859-1
 #urxvt*boldFont:                -*-terminus-medium-*-*-*-12-*-*-*-*-*-iso8859-1
 
 #urxvt.font:             -misc-fixed-medium-r-normal--15-140-75-75-c-90-iso10646-1

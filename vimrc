@@ -42,6 +42,12 @@ autocmd FileType php set sw=2
 autocmd FileType haml set syntax=haml
 autocmd FileType haml set ai
 autocmd FileType sass set ai
+autocmd FileType plaintex inoremap á \'a
+autocmd FileType plaintex inoremap é \'e
+autocmd FileType plaintex inoremap í \'i
+autocmd FileType plaintex inoremap ó \'o
+autocmd FileType plaintex inoremap ú \'u
+autocmd FileType plaintex inoremap ñ \~n
 
 " show tabs as blank-padded arrows, trailing spaces as middle-dots
 set list
@@ -84,7 +90,7 @@ nnoremap <enter> i<c-r>=EnterGoToFileWrapper()<cr>
 map <C-F> <ESC>:split<CR>:new<CR>:let b:isFileList=1<CR>:read ! find \| grep 
 
 " Language mappings for Russian (from ':help russian-keymap')
-"set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz
+"set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz,жЖбБюЮ;\;\:,\<.\>
 
 
 
@@ -92,5 +98,69 @@ map <C-F> <ESC>:split<CR>:new<CR>:let b:isFileList=1<CR>:read ! find \| grep
 "highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "match OverLength /\%81v.*/
 
+nnoremap y "+y
+vnoremap y "+y
+nnoremap d "+d
+vnoremap d "+d
+nnoremap p "+p
+nnoremap P "+P
+vnoremap p "+p
+vnoremap P "+P
 
 syn on
+
+
+function! MoveToPrevTab()
+  "there is only one window
+  if tabpagenr('$') == 1 && winnr('$') == 1
+    return
+  endif
+  "preparing new window
+  let l:tab_nr = tabpagenr('$')
+  let l:cur_buf = bufnr('%')
+  if tabpagenr() != 1
+    close!
+    if l:tab_nr == tabpagenr('$')
+      tabprev
+    endif
+    sp
+  else
+    close!
+    exe "0tabnew"
+  endif
+  "opening current buffer in new window
+  exe "b".l:cur_buf
+endfunc
+
+function! MoveToNextTab()
+  "there is only one window
+  if tabpagenr('$') == 1 && winnr('$') == 1
+    return
+  endif
+  "preparing new window
+  let l:tab_nr = tabpagenr('$')
+  let l:cur_buf = bufnr('%')
+  if tabpagenr() < tab_nr
+    close!
+    if l:tab_nr == tabpagenr('$')
+      tabnext
+    endif
+    sp
+  else
+    close!
+    tabnew
+  endif
+  "opening current buffer in new window
+  exe "b".l:cur_buf
+endfunc
+
+nnoremap <C-W>> :call MoveToNextTab()<CR>
+nnoremap <C-W>< :call MoveToPrevTab()<CR>
+
+set wildmenu
+set wildmode=longest:full
+
+set ruler
+
+set visualbell
+

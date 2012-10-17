@@ -4,12 +4,12 @@ __git_repo_name() {
     if [ -z "$cdup" ]; then
       cdup=.
     fi
-    dir=$(cd $cdup; pwd)
     echo -n "("
     name=$(git config --get remote.origin.url | sed -e 's/^.*[:\\/]\([^:.\\/]*\)\.git$/\1/')
     if [ -n "$name" ]; then
       echo -n $name
     else
+      dir=$((cd $cdup; pwd) | tail -1)
       echo -n $(basename $dir)
     fi
     echo ":"
@@ -60,5 +60,17 @@ _op_complete() {
 
 complete -F _op_complete op
 
+_inside_screen() {
+  [ "$STY" != "" ]
+}
+
+_screen_id() {
+  echo $STY | cut -d. -f 2-
+}
+
+
+ipfor() {
+  host $1 | cut -d ' ' -f 4
+}
 
 # vim:set syntax=sh:set ai:
