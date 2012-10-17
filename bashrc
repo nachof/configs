@@ -1,4 +1,7 @@
-. /etc/bash_completion
+. /etc/bash.bashrc
+. /usr/share/bash-completion/completions/git
+. /usr/share/bash-completion/bash_completion
+. /usr/share/git/completion/git-prompt.sh
 . ~/.functions
 
 set -o vi
