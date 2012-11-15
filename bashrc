@@ -26,6 +26,7 @@ export QEMU_AUDIO_DRV=sdl
 export SDL_AUDIODRIVER=alsa
 
 export EDITOR=vim
+export BROWSER=chromium
 
 # rvm-install added line:
 if [[ -s /home/nacho/.rvm/scripts/rvm ]] ; then
