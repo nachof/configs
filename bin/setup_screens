@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if xrandr | grep 'HDMI-0 connected'; then
+  xrandr --output LVDS --auto
+  xrandr --output HDMI-0 --auto --left-of LVDS
+else
+  xrandr --output LVDS --auto
+  xrandr --output HDMI-0 --off
+fi
+
