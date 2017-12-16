@@ -1,0 +1,9 @@
+#!/bin/bash
+
+status=$(amixer get Speaker | grep 'Front Left:' | cut -d ' ' -f 9)
+
+if [ "$status" == "[on]" ]; then
+  amixer set Speaker mute
+elif [ "$status" == "[off]" ]; then
+  amixer set Speaker unmute
+fi
