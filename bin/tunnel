@@ -1,8 +1,12 @@
 #!/bin/sh
 
-host=192.168.1.1
+#host=192.168.1.1
+#
+#[ "$1" == "remote" ] && host=sietch.dyndns.org
 
-[ "$1" == "remote" ] && host=sietch.dyndns.org
+host=jamis.nucleartesuji.com
+user=nacho
+http_port=8080
+https_port=8081
 
-
-ssh -nNtg -R :80:0.0.0.0:80 -R :81:0.0.0.0:443 root@$host
+ssh -nNtg -R :$http_port:0.0.0.0:80 -R :$https_port:0.0.0.0:443 $user@$host
