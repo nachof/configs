@@ -1,10 +1,14 @@
 #!/bin/bash
 
-if xrandr | grep 'HDMI-0 connected'; then
-  xrandr --output LVDS --auto
-  xrandr --output HDMI-0 --auto --left-of LVDS
-else
-  xrandr --output LVDS --auto
-  xrandr --output HDMI-0 --off
+xrandr --output VGA1 --off
+xrandr --output HDMI1 --off
+xrandr --output LVDS1 --auto
+
+if xrandr | grep 'HDMI1 connected'; then
+  xrandr --output HDMI1 --auto --right-of LVDS1
+fi
+
+if xrandr | grep 'VGA1 connected'; then
+  xrandr --output VGA1 --auto --left-of LVDS1
 fi
 
