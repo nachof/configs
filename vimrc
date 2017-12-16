@@ -57,8 +57,9 @@ set listchars=tab:→\ ,trail:·
 " Set color scheme for console
 set t_Co=16
 if !has("gui_running")
-  colorscheme desert
-  highlight Normal ctermbg=Black
+  let g:solarized_termcolors=256
+  colorscheme solarized
+  set background=dark
 endif
 
 " TAB completion
@@ -98,14 +99,14 @@ map <C-F> <ESC>:split<CR>:new<CR>:let b:isFileList=1<CR>:read ! find \| grep
 "highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "match OverLength /\%81v.*/
 
-nnoremap y "+y
-vnoremap y "+y
-nnoremap d "+d
-vnoremap d "+d
-nnoremap p "+p
-nnoremap P "+P
-vnoremap p "+p
-vnoremap P "+P
+"nnoremap y "+y
+"vnoremap y "+y
+"nnoremap d "+d
+"vnoremap d "+d
+"nnoremap p "+p
+"nnoremap P "+P
+"vnoremap p "+p
+"vnoremap P "+P
 
 syn on
 
@@ -164,3 +165,7 @@ set ruler
 
 set visualbell
 
+set winminheight=0
+
+set ignorecase
+set smartcase
