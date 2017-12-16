@@ -47,7 +47,7 @@ alias grep='grep --color '
 
 alias ssh="TERM=linux ssh"
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk/jre
+export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 alias gemi="gem install --no-ri --no-rdoc"
 
 if _inside_screen; then
