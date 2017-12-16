@@ -64,3 +64,19 @@ alias b="bundle exec"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH="/usr/local/heroku/bin:$PATH"
+
+BROWSER=chromium
+
+#LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/lib
+#export LD_LIBRARY_PATH
+
+
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+
+
+export PATH="$PATH:~/software/ec2-api-tools/bin:~/software/ec2-ami-tools/bin"
+
+export MYSQL_PS1="(\u@\h) [\d]> "
