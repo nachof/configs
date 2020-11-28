@@ -16,7 +16,7 @@ alias caploy='cap deploy'
 alias CAPLOY='cap deploy'
 
 screen_stuff='\[\033k\033\\\]'
-PS1='\[\e[37;1m\]\u@\H\[\e[0m\] \[\e[33m\]$(__git_repo_name)$(__git_ps1 "%s) ")\[\e[0m\]\W \n\[\e[32;1m\]\$\[\e[0m\]\[\e[0m\] '$screen_stuff
+PS1='\[\e[37;1m\]$(__virtualenv_name)\u@\H\[\e[0m\] \[\e[33m\]$(__git_repo_name)$(__git_ps1 "%s) ")\[\e[0m\]\W \n\[\e[32;1m\]\$\[\e[0m\]\[\e[0m\] '$screen_stuff
 
 eval $(keychain --eval -q)
 
