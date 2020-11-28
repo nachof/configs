@@ -16,6 +16,15 @@ __git_repo_name() {
   fi
 }
 
+__virtualenv_name() {
+  if [[ -z "$VIRTUAL_ENV" ]]; then
+    echo ""
+  else
+    venv=$(echo "$VIRTUAL_ENV" | rev | cut -d/ -f1-2 | rev | cut -d/ -f1)
+    echo "[virtualenv: $venv] "
+  fi
+}
+
 cdg() {
   cdup=$(git rev-parse --show-cdup 2> /dev/null)
   r=$?

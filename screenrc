@@ -167,3 +167,26 @@ hardstatus string '%{= kG}[%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?
 
 # Mousey
 termcapinfo urxvt* XT
+
+# 0
+screen -t code vim
+# 1
+screen -t
+# 2
+screen -t
+# 3
+screen -t
+# 4
+screen -t
+# 5
+screen -t
+# 6
+screen -t
+# 7
+screen -t
+# 8
+screen -t
+# 9
+screen -t
+
+select code

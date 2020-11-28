@@ -55,9 +55,16 @@ set listchars=tab:→\ ,trail:·
 
 
 " Set color scheme for console
-set t_Co=16
+set t_Co=256
 if !has("gui_running")
-  let g:solarized_termcolors=256
+  let g:solarized_termcolors= 256 " 16
+  let g:solarized_termtrans = 1 " 0
+  let g:solarized_degrade = 0 "1
+  let g:solarized_bold = 1 " 0
+  let g:solarized_underline = 1 " 0
+  let g:solarized_italic = 1 " 0
+  let g:solarized_contrast = "normal" " “high” or “low”
+  let g:solarized_visibility= "high" " “normal” or “low”
   colorscheme solarized
   set background=dark
 endif
@@ -90,23 +97,9 @@ nnoremap <enter> i<c-r>=EnterGoToFileWrapper()<cr>
 
 map <C-F> <ESC>:split<CR>:new<CR>:let b:isFileList=1<CR>:read ! find \| grep 
 
-" Language mappings for Russian (from ':help russian-keymap')
-"set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz,жЖбБюЮ;\;\:,\<.\>
-
-
-
 
 "highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 "match OverLength /\%81v.*/
-
-"nnoremap y "+y
-"vnoremap y "+y
-"nnoremap d "+d
-"vnoremap d "+d
-"nnoremap p "+p
-"nnoremap P "+P
-"vnoremap p "+p
-"vnoremap P "+P
 
 syn on
 
@@ -169,3 +162,17 @@ set winminheight=0
 
 set ignorecase
 set smartcase
+
+set clipboard^=unnamedplus
+
+let g:ycm_confirm_extra_conf = 0
+
+
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0

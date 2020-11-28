@@ -47,7 +47,7 @@ alias grep='grep --color '
 
 alias ssh="TERM=linux ssh"
 
-export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk
 alias gemi="gem install --no-ri --no-rdoc"
 
 if _inside_screen; then
@@ -64,7 +64,6 @@ alias b="bundle exec"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH="/usr/local/heroku/bin:$PATH"
 
 BROWSER=chromium
 
@@ -72,11 +71,8 @@ BROWSER=chromium
 #export LD_LIBRARY_PATH
 
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 
-export PATH="$PATH:~/software/ec2-api-tools/bin:~/software/ec2-ami-tools/bin"
+export PATH="$PATH:/home/nacho/software/ec2-api-tools/bin:/home/nacho/software/ec2-ami-tools/bin:/home/nacho/.local/bin"
 
 export MYSQL_PS1="(\u@\h) [\d]> "
